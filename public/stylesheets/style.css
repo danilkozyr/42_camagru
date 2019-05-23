@@ -1,0 +1,237 @@
+body {
+    background-color: black;
+    background-image: url("../images/background.svg");
+    background-color: #cccccc;
+    background-size: auto auto;
+}
+
+@font-face {
+    font-family: "BWNista";
+    src: url("fonts/BwNista/BwNistaBlack.otf");
+}
+
+@font-face {
+    font-family: "BWNista1";
+    src: url("fonts/BwNista/BwNistaBold.otf");
+}
+
+@font-face {
+    font-family: "Poppins-ExtraLightItalic";
+    src: url("fonts/Poppins/Poppins-ExtraLightItalic.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url("fonts/Poppins/Poppins-Medium.ttf");
+}
+
+
+h1 {
+    font-family: 'Poppins-Medium', Arial, sans-serif;
+    font-size: 20px;
+}
+
+h3 {
+    font-family: 'Poppins-Medium', Arial, sans-serif;
+    margin-top: 0px;
+    color: rebeccapurple;
+    font-size: 15px;
+}
+
+.custom {
+    margin-left: 30%;
+    margin-top: 20px;
+    height: 30%;
+    width: 40vw;
+    text-align: center;
+    border: 2px solid rgba(245,245,241, 0.85);
+    background-color:rgba(245,245,241, 0.85);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.input1 {
+    width: 85%;
+    margin-bottom: 15px;
+    background-color: rgb(230, 230, 230);
+    font-family: Poppins-ExtraLightItalic;
+    border: 0px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 15px;
+    /* line-height: 1.5; */
+    color: #666666;
+    /* color: red; */
+}
+
+.button {
+    width: 50%;
+    background-color: rgb(35,129,137);
+    font-family: Poppins-Bold;
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;    
+}
+
+.txt {
+    font-family: Poppins-Medium;
+    font-size: 13px;
+    line-height: 1.5;
+    color: black;
+    /* margin-bottom: 20px; */
+}
+
+
+/*                       NAVIGATION BAR                         */
+
+.nav_bar {
+    background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    width: 100%;
+    overflow: hidden;
+    /* margin-top: 15px; */
+}
+
+.nav_bar th {
+    width: 20%;
+    padding: 14px;
+}
+
+.nav_bar a {
+    font-family: BWNista;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none; /* delete underline */
+    font-size: 17px;
+}
+  
+.nav_bar a:hover {
+    text-decoration: underline;
+}
+
+.nav_bar a.active {
+    text-decoration: underline;
+}
+
+ul.menu li{
+    display: none;
+    padding: 10px 10px 10px 20px;
+}
+
+ul.menu li:first-child{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    border-top:0px;
+    padding-left:10px;
+}
+
+ul.menu:hover li{
+    display:block;
+}
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 20px 10% 20px 10%;
+    /* border-radius: 10px; */
+    background:rgb(35,129,137);;
+}
+
+.tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tab-group li a {
+    font-family: Poppins-Bold;
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    color:white;
+    font-size:15px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+}
+
+.tab-group .active a {
+    background: black;
+}
+
+.tab-group a:hover {
+    background-color: black;
+}
+
+/*                                                  FOOTER                          */
+
+
+.footer-basic-centered{
+	/* background-color: rgba(41,44,47, 0.50); */
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	/* width: 99%; */
+	text-align: center;
+	font: normal 18px sans-serif;
+    margin-left: 0px;
+	padding: 45px;
+    margin-top: 80px;
+    /* position: absolute; */
+    /* bottom: 0px; */
+    /* top:10px; */
+    /* margin-bottom: 0px; */
+}
+
+.footer-basic-centered .footer-company-motto{
+	color:  #8d9093;
+	font-size: 24px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 35px 0 23px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+    font-family: Poppins-Bold;
+	display:inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+.footer-basic-centered .footer-links a:hover{
+	text-decoration: underline;
+}
