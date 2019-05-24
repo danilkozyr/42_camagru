@@ -1,5 +1,4 @@
 <?php
-    /* DATABASE connect to server */
 
     $DB_DSN = 'mysql:host=localhost;dbname=accounts';
     $DB_USER = 'root';
@@ -11,5 +10,6 @@
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
+
 
 ?>

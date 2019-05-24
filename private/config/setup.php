@@ -1,10 +1,4 @@
 <?php
-    /* DATABASE connect to server */
-
-    // $host = 'localhost';
-    // $user = 'root';
-    // $password = '123456';
-    // // $db = 'accounts';
 
     $DB_DSN = 'mysql:host=localhost;';
     $DB_USER = 'root';

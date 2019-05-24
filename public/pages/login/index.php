@@ -1,7 +1,8 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
-<?php $page_title = 'Camagru Login'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
+<?php $page_title = 'Camagru Login'; ?>
+<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/pages/profile/index.php"); } ?>
 
 
 <div class="custom">
@@ -20,10 +21,7 @@
         <div id="login">
             <form class="form1" action="index.php" autocomplete="off" method="POST">
                 <h1>Welcome!</h1>
-                <?php
-                    if (isset($_POST['signin'])) {
-                        $email = $_POST['email'];
-                    }
+                <?php if (isset($_POST['signin'])) { $email = $_POST['email']; }
                 ?>
                 <input class="input1" type="email" name="email" value="<?php echo $email ?>" placeholder="Enter your email">
                 <input class="input1" type="password" name="pass" placeholder="Enter your password">
@@ -31,14 +29,12 @@
                     if (isset($_POST['signin'])) {
                         if (!($_POST['email'] && $_POST['pass'])) {
                             echo '<h3>Fill all required fileds</h3>';
-                        } else {
-                            // require(PRIVATE_PATH . '/login_func/login.php');
-                        }
+                        } else { require(PRIVATE_PATH . '/login_func/login.php'); }
                     }
-                    // elseif ($_SESSION['message_login']) {
-                    //     echo '<h3>'.$_SESSION['message_login'].'</h3>';
-                    //     unset($_SESSION['message_login']);
-                    // }
+                    if ($_SESSION['ver_message']) {
+                        echo '<h3>' . $_SESSION['ver_message'] . '</h3>';
+                        unset($_SESSION['ver_message']);
+                    }
                 ?>
                 <input class="button" type="submit" name="signin" value="Sign In"><br>
                 <a class="txt" href="forgot.php">Forgot Password?</a>
@@ -75,14 +71,8 @@
                         } elseif (!$uppercase || !$lowercase || !$number || strlen($_POST['pass']) < 6) {
                             echo '<h3>Password should be at least 6 characters in length<br> and should include at least one upper case letter and one number.</h3>';
                         } else {
-                            // require(PRIVATE_PATH . '/login_func/registration.php');
-
-                            // ADDD REGISTRATION FUNC!!!!
-
-
+                            require(PRIVATE_PATH . '/login_func/registration.php');
                         }
-                        
-
                     }
                 ?>
                 <input class="button" type="submit" name="register" value="Create account"><br>

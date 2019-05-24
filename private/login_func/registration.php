@@ -1,60 +1,48 @@
 <?php
-	/* Add variables to session for the next using */
-
-
 	$_SESSION['email'] = $_POST['email'];
 	$_SESSION['firstname'] = $_POST['firstname'];
 	$_SESSION['lastname'] = $_POST['lastname'];
-
-	/* используем для того чтобы обезопасить данные перед отправкой в sql */
+	$_SESSION['logged_in'] = true;
+	$_SESSION['active'] = 0;
 
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
-	$password = password_hash($_POST['pass'], PASSWORD_BCRYPT);
+	$pass = password_hash($_POST['pass'], PASSWORD_BCRYPT);
 	$hash = md5(rand(0,1000));
 
-    try {
-        $sql = "SELECT * FROM users WHERE email='$email'";
-        $sth = $pdo->query($sql);
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
+	try {
+		$stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
+		$stmt->execute([$email]);
+		$count = $stmt->fetchColumn();
+	} catch(PDOException $e) {
+		echo "Error: " . $e->getMessage();
+	}
 
-    // print_r($sql);
-    // print_r($sth);
-
-    // die;
-    
-
-	if ($result->num_rows > 0) {
-    	$_SESSION['reg_message'] = 'User with this email already exists!';
-    	header("url=account.php?a=signup");
+	if ($count > 0) {
+		echo "<br><h3>User with this email already exists</h3>";
+    	header("url=index.php?a=signup");
 	}
 	else {
-	    $sql = "INSERT INTO users (firstname, lastname, email, pass, hash) " 
-	            . "VALUES ('$firstname','$lastname','$email','$password', '$hash')";
-	    if ( $mysqli->query($sql) ) {
-
-	        $_SESSION['active'] = 0; //0 until user activates their account with verify.php
-	        $_SESSION['logged_in'] = true; // So we know the user has logged in
-;
-
-			// Send registration confirmation link (verify.php)
-	        $to      = $email;
-	        $subject = 'Account Verification ( camagru.com )';
-	        $message_body = '
-	        Hello '.$name.',
-
-	        Thank you for signing up!
-
-	        Please click this link to activate your account:
-
-	        http://localhost:8100/Camagru/verify.php?email='.$email.'&hash='.$hash;  
-
-	        mail( $to, $subject, $message_body );
-	        header("location: profile.php"); 
-	    }
+		try {
+			$sql = "INSERT INTO users (firstname, lastname, email, pass, hash) VALUES (:firstname, :lastname, :email, :pass, :hash)";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute([
+				':firstname' => $firstname,
+				':lastname' => $lastname,
+				':email' => $email,
+				':pass' => $pass,
+				':hash' => $hash
+			]);
+		} catch(PDOException $e) {
+			echo "Error: " . $e->getMessage();
+		}
+		$_SESSION['active'] = 0;
+		$_SESSION['logged_in'] = true;
+		$_SESSION['hash'] = $hash;
+		send_verification_email($email, $firstname, $lastname, $hash);
+		echo '<h3>Check your email for verification link.<br>Redirecting...</h3>';
+	    header("refresh:3;url=index.php"); 
     }
 
 ?>
