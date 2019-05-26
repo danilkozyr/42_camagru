@@ -23,7 +23,6 @@
                 $link = $_GET['logout'];
                 if ($link === '1')
                     require_once(PRIVATE_PATH . '/login_func/logout.php');
-                    // echo "hello";
             ?>
             <?php else : ?>
             <th><a href="<?php echo WWW_ROOT . '/pages/login/'?>">LOGIN</a></th>

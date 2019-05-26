@@ -5,7 +5,11 @@
             <p class="footer-links">
                 <a href="<?php echo WWW_ROOT . '/pages/index.php'?>">HOME</a>
                 ·
+                <?php if ($_SESSION['logged_in'] == true) : ?>
+                    <th><a href="<?php echo WWW_ROOT . '/pages/profile/'?>">PROFILE</a></th>
+                <?php else : ?>
                 <a href="<?php echo WWW_ROOT . '/pages/login/'?>">LOGIN</a>
+                <?php endif; ?>
                 ·
                 <a href="#">FEED</a>
                 ·
