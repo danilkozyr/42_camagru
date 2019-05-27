@@ -8,7 +8,7 @@
 
 <div class="custom">
     <form class="form1" action="index.php" autocomplete="off" method="POST">
-        <h1>Your Profile: </h1>
+        <h1>Your Profile</h1>
         <h2>First Name: <?php echo $_SESSION['firstname']; ?><br>Last Name: <?php echo $_SESSION['lastname']; ?><br>Email: <?php echo $_SESSION['email']; ?></h2>
 
         <?php

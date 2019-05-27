@@ -33,11 +33,11 @@
                 echo "Error: " . $e->getMessage();
             }      
         } else {
-            $_SESSION['ver_message'] = "The URL is invalid!";
+            $_SESSION['message'] = "The URL is invalid!";
             header("Location:" . WWW_ROOT . "/pages/login/index.php");
         }
     } else {
-        $_SESSION['ver_message'] = "Invalid parameters provided for account verification!";
+        $_SESSION['message'] = "Invalid parameters provided for account verification!";
         header("Location:" . WWW_ROOT . "/pages/login/index.php");
     }
 ?>

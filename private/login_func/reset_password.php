@@ -18,8 +18,6 @@
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-    
-    unset($_SESSION['hash']);
-    unset($_SESSION['email']);
+    $_SESSION['message'] = "Your password changed successfuly";
     header("Location: " . WWW_ROOT . "/pages/login/index.php");
 ?>

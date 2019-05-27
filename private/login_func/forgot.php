@@ -12,6 +12,7 @@
 
     if ($user) {
         send_reset_pass_email($user['email'], $user['firstname'], $user['lastname'], $user['hash']);
+        $_SESSION['message'] = "Check your email for reset password link";
         header("Location:" . WWW_ROOT . '/pages/login/index.php');
 
     } else {

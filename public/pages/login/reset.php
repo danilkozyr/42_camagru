@@ -24,11 +24,11 @@
             echo "Error: " . $e->getMessage();
         }
         if (!$user) {
-            $_SESSION['ver_message'] = "Invalid Link";
+            $_SESSION['message'] = "Invalid Link";
             header("Location:" . WWW_ROOT . "/pages/login/index.php");
         }
     } elseif (!$_POST['pass'] && !$_POST['confirm_pass']) {
-        $_SESSION['ver_message'] = "Invalid Link";
+        $_SESSION['message'] = "Invalid Link";
         header("Location:" . WWW_ROOT . "/pages/login/index.php");
     }
 
@@ -55,6 +55,8 @@
                     echo '<h3>Password should be at least 6 characters in length<br> and should include at least one upper case letter and one number.</h3>';
                 } else {
                     require_once(PRIVATE_PATH . '/login_func/reset_password.php');
+                    unset($_SESSION['hash']);
+                    unset($_SESSION['email']);
                 }
             }
         ?>

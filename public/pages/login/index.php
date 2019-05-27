@@ -31,9 +31,9 @@
                             echo '<h3>Fill all required fileds</h3>';
                         } else { require(PRIVATE_PATH . '/login_func/login.php'); }
                     }
-                    if ($_SESSION['ver_message']) {
-                        echo '<h3>' . $_SESSION['ver_message'] . '</h3>';
-                        unset($_SESSION['ver_message']);
+                    if ($_SESSION['message']) {
+                        echo '<h3>' . $_SESSION['message'] . '</h3>';
+                        unset($_SESSION['message']);
                     }
                 ?>
                 <input class="button" type="submit" name="signin" value="Sign In"><br>
