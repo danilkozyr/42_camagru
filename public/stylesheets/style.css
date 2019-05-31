@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    background-image: url("../images/background.svg");
+    /* background-image: url("../images/background.svg"); */
     background-color: #cccccc;
     background-size: auto auto;
 }
@@ -58,6 +58,14 @@ h3 {
     margin-top: 10px;
     color: rebeccapurple;
     font-size: 15px;
+}
+
+.text_custom {
+    font-family: 'Poppins-Medium', Arial, sans-serif;
+    color: white;
+    margin: 5px 5px;
+    /* padding: 0; */
+    font-size: 12px;
 }
 
 .text_edit_acc {
@@ -280,11 +288,14 @@ ul.menu:hover li{
 
 .booth {
     width: 600px;
-    /* height: 600px; */
-    background-color:white;
-    /* border: 10px solid white; */
     margin: 0 auto;
 }
+
+.last_elem {
+    margin-bottom: 50px;
+}
+
+#canvas { display: none; }
 
 .booth-button {
     display: block;

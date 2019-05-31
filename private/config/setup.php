@@ -19,6 +19,10 @@
             `active` BOOL NOT NULL DEFAULT 0,
         PRIMARY KEY (`id`) 
         );');
+        $pdo->query('CREATE TABLE `accounts`.`images`
+        {
+
+        };');
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

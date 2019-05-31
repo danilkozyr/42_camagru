@@ -18,15 +18,15 @@
             <table class="nav_bar">
                 <th><a href="<?php echo WWW_ROOT . '/pages/index.php'?>">HOME</a></th>
                 <th><a href="#">FEED</a></th>
-                <th><a href="<?php echo WWW_ROOT . '/pages/make_photo.php'?>"><img src="<?php echo WWW_ROOT . "/images/photo1.png"?>"" title="hello" width="50"></a></th>
                 <?php if ($_SESSION['logged_in'] == true) : ?>
+                <th><a href="<?php echo WWW_ROOT . '/pages/make_photo.php'?>"><img src="<?php echo WWW_ROOT . "/images/photo.png"?>"" title="hello" width="50"></a></th>
                 <th><a href="<?php echo WWW_ROOT . '/pages/profile/'?>">PROFILE</a></th>
                 <th><a href="?logout=1">LOG OUT</a></th>
                 <?php 
                     $link = $_GET['logout'];
                     if ($link === '1')
-                        require_once(PRIVATE_PATH . '/login_func/logout.php');
-                ?>
+                    require_once(PRIVATE_PATH . '/login_func/logout.php');
+                    ?>
                 <?php else : ?>
                 <th><a href="<?php echo WWW_ROOT . '/pages/login/'?>">LOGIN</a></th>
                 <?php endif; ?>
