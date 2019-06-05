@@ -12,11 +12,9 @@
                     <a href="<?php echo WWW_ROOT . '/pages/login/'?>">LOGIN</a>
                     <?php endif; ?>
                     ·
+                    <a href="<?php echo WWW_ROOT . "/pages/make_photo.php" ?>">MAKE A SNAPSHOT</a>
+                    ·
                     <a href="#">FEED</a>
-                    ·
-                    <a href="#">FAQ</a>
-                    ·
-                    <a href="#">CONTACT</a>
                 </p>
 
                 <p class="footer-company-name">Camagru &copy; 2019</p>

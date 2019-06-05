@@ -15,6 +15,7 @@
         $_SESSION['email'] = $user['email'];
         $_SESSION['hash'] = $user['hash'];
         $_SESSION['active'] = $user['active'];
+        $_SESSION['img'] = $user['img'];
 
         $_SESSION['logged_in'] = true;
 

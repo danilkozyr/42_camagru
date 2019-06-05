@@ -54,9 +54,9 @@
                     }
                 ?>
                 
-                <input class="input1" type="name" name="firstname" value="<?php echo $firstname; ?>" placeholder="Enter your name">
-                <input class="input1" type="name" name="lastname" value="<?php echo $lastname; ?>" placeholder="Enter your last name">
-                <input class="input1" type="email" name="email" value="<?php echo $email; ?>" placeholder="Enter your email">
+                <input class="input1" type="name" name="firstname" value="<?php echo htmlentities($firstname); ?>" placeholder="Enter your name">
+                <input class="input1" type="name" name="lastname" value="<?php echo htmlentities($lastname); ?>" placeholder="Enter your last name">
+                <input class="input1" type="email" name="email" value="<?php echo htmlentities($email); ?>" placeholder="Enter your email">
                 <input class="input1" type="password" name="pass" placeholder="Enter your password">
                 <?php
 

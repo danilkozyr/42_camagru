@@ -11,10 +11,10 @@
     <form class="form1" action="change_profile.php" autocomplete="off" method="POST">
         <h1>Account Edition</h1>
 
-        <p class="text_edit_acc">Your name: <?php echo $_SESSION['firstname']; ?></p>
+        <p class="text_edit_acc">Your name: <?php echo htmlentities($_SESSION['firstname']); ?></p>
         <input class="input1" type="name" name="firstname" placeholder="Change Your First Name">
 
-        <p class="text_edit_acc">Your name: <?php echo $_SESSION['lastname']; ?></p>
+        <p class="text_edit_acc">Your name: <?php echo htmlentities($_SESSION['lastname']); ?></p>
         <input class="input1" type="name" name="lastname" placeholder="Change Your Last Name">
 
         <p class="text_edit_acc">Enter Password to Confirm Changes</p>

@@ -8,21 +8,24 @@
         $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
         $pdo->query('CREATE DATABASE accounts');
         $pdo->query('
+        CREATE TABLE `accounts`.`images` 
+        (
+            `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `name` varchar(200) NOT NULL,
+            `image` longtext NOT NULL
+        );');
+        $pdo->query('
         CREATE TABLE `accounts`.`users` 
         (
-            `id` INT NOT NULL AUTO_INCREMENT,
+            `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
             `firstname` VARCHAR(50) NOT NULL,
             `lastname` VARCHAR(50) NOT NULL,
             `email` VARCHAR(100) NOT NULL,
             `pass` VARCHAR(100) NOT NULL,
             `hash` VARCHAR(32) NOT NULL,
-            `active` BOOL NOT NULL DEFAULT 0,
-        PRIMARY KEY (`id`) 
+            `img` longtext,
+            `active` BOOL NOT NULL DEFAULT 0
         );');
-        $pdo->query('CREATE TABLE `accounts`.`images`
-        {
-
-        };');
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
