@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Poppins:400,700&display=swap');
+
 body {
     background-color: black;
     background-image: url("../images/background.svg");
@@ -6,37 +8,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-color: #cccccc;
-    /* background-size: auto auto; */
 }
-
-@font-face {
-    font-family: "BWNista";
-    src: url("fonts/BwNista/BwNistaBlack.otf");
-}
-
-@font-face {
-    font-family: "BWNista1";
-    src: url("fonts/BwNista/BwNistaBold.otf");
-}
-
-@font-face {
-    font-family: "Poppins-ExtraLightItalic";
-    src: url("fonts/Poppins/Poppins-ExtraLightItalic.ttf");
-}
-
-@font-face {
-    font-family: "Poppins-Bold";
-    src: url("fonts/Poppins/Poppins-Bold.ttf");
-}
-
-@font-face {
-    font-family: "Poppins-Medium";
-    src: url("fonts/Poppins/Poppins-Medium.ttf");
-}
-
 
 h1 {
-    font-family: 'Poppins-Medium', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     font-size: 30px;
 }
 
@@ -45,20 +21,13 @@ h2 {
     font-size: 18px; 
     margin-left: 20px;
     line-height: 24px;
-
     text-align: left;
 }
 
-/*h2 {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    text-align: left;
-    margin-left: 20px;
-    line-height: 24px;
-}*/
 
 h3 {
-    font-family: 'Poppins-Medium', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     margin-top: 10px;
     color: rebeccapurple;
     font-size: 15px;
@@ -74,27 +43,26 @@ h3 {
 
 
 .text_custom {
-    font-family: 'Poppins-Medium', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     color: white;
     margin: 5px 5px;
-    /* padding: 0; */
     font-size: 12px;
 }
 
 .text_edit_acc {
-    /*width: 85%;*/
     text-align: left;
     margin-left: 9%;
     font-size: 14px;
-    font-family: 'Poppins-Medium', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     margin-bottom: 5px;
 }
 
 .custom {
     margin-left: 30%;
     margin-top: 20px;
-    /* /* min-height: 300px; */
-    /* min-width: 20%; */
+
     height: 30%;
     width: 40vw;
     text-align: center;
@@ -108,11 +76,11 @@ h3 {
     width: 85%;
     margin-bottom: 10px;
     background-color: rgb(230, 230, 230);
-    font-family: Poppins-ExtraLightItalic;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
     border: 0px;
     height: 40px;
     border-radius: 10px;
-    font-size: 15px;
     padding-left: 15px;
     color: black;
 }
@@ -125,7 +93,6 @@ h3 {
 
 .button.inactive {
     background-color: rgb(44,	65,	69);
-    /* color: black; */
 }
 
 .button.margin {
@@ -135,7 +102,8 @@ h3 {
 .button {
     width: 50%;
     background-color: rgb(35,129,137);
-    font-family: Poppins-Bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650;
     font-size: 13px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -151,21 +119,25 @@ h3 {
 }
 
 .txt {
-    font-family: Poppins-Medium;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     font-size: 13px;
     line-height: 1.5;
     color: black;
 }
 
+.no-margins {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    color:white;
+}
+
 .snap {
     width: 100%;
-    border: 2px solid black;
 }
 
 .snap th {
     width: 50%;
-    /* border: 1px solid, black; */
-
 }
 
 
@@ -180,7 +152,6 @@ h3 {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     width: 100%;
     overflow: hidden;
-    /* margin-top: 15px; */
 }
 
 .nav_bar th {
@@ -189,11 +160,12 @@ h3 {
 }
 
 .nav_bar a {
-    font-family: BWNista;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+
     color: #f2f2f2;
     text-align: center;
-    text-decoration: none; /* delete underline */
-    font-size: 17px;
+    text-decoration: none; 
 }
   
 .nav_bar a:hover {
@@ -230,7 +202,6 @@ ul.menu:hover li{
     list-style: none;
     padding: 0;
     margin: 20px 10% 20px 10%;
-    /* border-radius: 10px; */
     background:rgb(35,129,137);;
 }
 
@@ -241,7 +212,8 @@ ul.menu:hover li{
 }
 
 .tab-group li a {
-    font-family: Poppins-Bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650;
     display:block;
     text-decoration:none;
     padding:15px;
@@ -265,7 +237,7 @@ ul.menu:hover li{
 /*                                                  FOOTER                          */
 
 
-#content-wrap {  padding-bottom: 2.5rem;    /* Footer height */}
+#content-wrap {  padding-bottom: 2.5rem;  }
 #page-container {  position: relative;  min-height: 90vh;}
 
 
@@ -305,7 +277,8 @@ ul.menu:hover li{
 }
 
 .footer-basic-centered .footer-links a{
-    font-family: Poppins-Bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650;
 	display:inline-block;
 	text-decoration: none;
 	color: inherit;
@@ -328,7 +301,6 @@ ul.menu:hover li{
 
 .booth-button {
     display: block;
-    /* padding: 20px 20px; */
     background-color: cornflowerblue;
     color:white;
     text-align: center;
@@ -341,7 +313,6 @@ ul.menu:hover li{
 }
 
 .feed {
-    /* margin-left: auto; */
     margin-top: 20px;
     width: 615px;
     height: 500px;
@@ -361,6 +332,11 @@ input[type="file"] {
     display: none;
 }
 
+.hide {
+    display: none;
+
+}
+
 .custom-file {
     margin-bottom: 20px;
 }
@@ -368,7 +344,8 @@ input[type="file"] {
 .custom-file-upload {
     width: 50%;
     background-color: rgb(35,129,137);
-    font-family: Poppins-Bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650;
     font-size: 10px;
     color: white;
     padding: 4px 10px;
@@ -382,6 +359,6 @@ input[type="file"] {
 
 
 .padding-gallery {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 225px;
 }

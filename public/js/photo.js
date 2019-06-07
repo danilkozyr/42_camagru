@@ -5,19 +5,12 @@
     var context = canvas.getContext('2d');
     var photo = document.getElementById('photo');
     var vendorUrl = window.URL || window.WebKitURL;
-    // const url = 'make_photo.php';
-    const form = document.querySelector('form');
 
-    // if (window.File && window.FileReader && window.FileList && window.Blob) {
-    //     // alert('works');// Работает
-    // } else {
-    //     alert('File API не поддерживается данным браузером');
-    // }
-
-
-    // var str="hello";
-    // console.log(str);
-
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        // alert('works');// Работает
+    } else {
+        alert('File API не поддерживается данным браузером');
+    }
 
     navigator.getMedia =    navigator.getUserMedia ||
                             navigator.WebKitGetUserMedia ||
@@ -31,7 +24,7 @@
         video.srcObject = stream;
         video.play();
     }, function(error) {
-        // alert("To make photos - give the access to your webcam in browser settings");
+        alert("To make photos - give the access to your webcam in browser settings");
     });
 
     document.getElementById('capture').addEventListener('click', function() {
@@ -39,21 +32,32 @@
         photo.setAttribute('src', canvas.toDataURL('image/png'));
     });
 
-    form.addEventListener('submit', e => {
-        alert("hello");
-    });
+
+    // form.addEventListener('submit', (data) => {
+        // var name = "name=" + photo.currentSrc;
 
 
-    // form.addEventListener('submit', e => {
-    //     e.preventDefault()
-    //     console.log(str); 
-    // //     const file = document.querySelector('[id=photo]');
-    // //     const formData = new FormData();
-    // //     formData.append('file', file.currentSrc);
-    // //     for (var value of formData.values()) {
-    // //         console.log(value); 
-    //     //  }
-   
-    //   })
-    
+    //     var formData = new FormData();
+    //     var xhr = new XMLHttpRequest();
+        
+    //     formData.append('name', photo.currentSrc);
+
+
+    //     xhr.upload.onprogress = function(event) {
+    //         console.log(`Uploaded ${event.loaded} of ${event.total}`);
+    //     };
+        
+    //     xhr.onloadend = function() {
+    //         if (xhr.status == 200) {
+    //         console.log("success");
+    //         } else {
+    //         console.log("error " + this.status);
+    //         }
+    //     };
+
+
+    //     xhr.open('POST', 'submit_photo.php');
+    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //     xhr.send(formData);
+    // });
 }) ();

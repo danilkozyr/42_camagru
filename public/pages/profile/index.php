@@ -8,8 +8,6 @@
 <?php if ($_POST['verify']) { send_verification_email($_SESSION['email'], $_SESSION['firstname'], $_SESSION['lastname'], $_SESSION['hash']); }?>
 <?php if ($_POST['edit']) { header("Location: change_profile.php"); } ?>
 
-<!-- <?php print_r($_FILES); ?> -->
-
 <div class="custom">
     <form class="form1" action="index.php" autocomplete="off" method="POST" enctype="multipart/form-data">    
         <h1>Your Profile</h1>
@@ -18,7 +16,7 @@
                 <h2>First Name: <?php echo htmlentities($_SESSION['firstname']); ?><br>Last Name: <?php echo htmlentities($_SESSION['lastname']); ?><br>Email: <?php echo htmlentities($_SESSION['email']); ?></h2>
             </th>
             <th>
-                <?php if (isset($_SESSION['img'])) { echo "<img class='ava' src='". $_SESSION['img'] . "'><br>"; }
+                <?php if (isset($_SESSION['img']) && !empty($_SESSION['image'])) { echo "<img class='ava' src='". $_SESSION['img'] . "'><br>"; }
                     else { echo "<img class='ava' src='" . WWW_ROOT . "/images/ava.png'><br>"; } ?>
                 <div class="custom-file">
                     <label for="file-upload" class="custom-file-upload">change photo</label>
