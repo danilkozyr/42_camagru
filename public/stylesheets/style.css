@@ -149,8 +149,8 @@ h3 {
 /*                       NAVIGATION BAR                         */
 
 .nav_bar {
-    background-color: #292c2f;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    /*background-color: #292c2f;*/
+	/*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);*/
     width: 100%;
     overflow: hidden;
 }
@@ -482,3 +482,54 @@ input[type="file"] {
     background-color: rgba(0, 0, 0, 0.0);
     cursor: pointer;
 }
+
+.home-page {
+    width: 100%;
+}
+
+.home-page th {
+    width: 50%;
+}
+
+.home-page img {
+    margin-top: 10%;
+    width: 60%;
+}
+
+.home-heding-div {
+    margin-left: 150px;
+    text-align: left;
+}
+
+.home-heading1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: white;
+    margin: 0 0 0 0;
+}
+
+.home-heading2 {
+    margin: 0 0 0 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+    color: white;
+}
+
+.home-heading3 {
+    margin: 0 0 0 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.home-heading4 {
+    margin: 0 0 0 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+
