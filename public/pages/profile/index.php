@@ -16,7 +16,7 @@
                 <h2>First Name: <?php echo htmlentities($_SESSION['firstname']); ?><br>Last Name: <?php echo htmlentities($_SESSION['lastname']); ?><br>Email: <?php echo htmlentities($_SESSION['email']); ?></h2>
             </th>
             <th>
-                <?php if (isset($_SESSION['img']) && !empty($_SESSION['image'])) { echo "<img class='ava' src='". $_SESSION['img'] . "'><br>"; }
+                <?php if (isset($_SESSION['img']) && !empty($_SESSION['img'])) { echo "<img class='ava' src='". $_SESSION['img'] . "'><br>"; }
                     else { echo "<img class='ava' src='" . WWW_ROOT . "/images/ava.png'><br>"; } ?>
                 <div class="custom-file">
                     <label for="file-upload" class="custom-file-upload">change photo</label>

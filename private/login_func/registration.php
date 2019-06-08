@@ -2,7 +2,7 @@
 	$_SESSION['email'] = $_POST['email'];
 	$_SESSION['firstname'] = $_POST['firstname'];
 	$_SESSION['lastname'] = $_POST['lastname'];
-	$_SESSION['logged_in'] = true;
+	// $_SESSION['logged_in'] = true;
 	$_SESSION['active'] = 0;
 
 	$firstname = $_POST['firstname'];
@@ -38,7 +38,7 @@
 			echo "Error: " . $e->getMessage();
 		}
 		$_SESSION['active'] = 0;
-		$_SESSION['logged_in'] = true;
+		// $_SESSION['logged_in'] = true;
 		$_SESSION['hash'] = $hash;
 		send_verification_email($email, $firstname, $lastname, $hash);
 		echo '<h3>Check your email for verification link.<br>Redirecting...</h3>';

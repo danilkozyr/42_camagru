@@ -8,11 +8,12 @@
         $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
         $pdo->query('CREATE DATABASE accounts');
         $pdo->query('
-        CREATE TABLE `accounts`.`images` 
+        CREATE TABLE `accounts`.`img` 
         (
-            `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            `name` varchar(200) NOT NULL,
-            `image` longtext NOT NULL
+            `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `userId` int(10) NOT NULL,
+            `image` longtext NOT NULL,
+            `public` INT NULL DEFAULT 0
         );');
         $pdo->query('
         CREATE TABLE `accounts`.`users` 

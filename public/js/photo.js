@@ -32,32 +32,4 @@
         photo.setAttribute('src', canvas.toDataURL('image/png'));
     });
 
-
-    // form.addEventListener('submit', (data) => {
-        // var name = "name=" + photo.currentSrc;
-
-
-    //     var formData = new FormData();
-    //     var xhr = new XMLHttpRequest();
-        
-    //     formData.append('name', photo.currentSrc);
-
-
-    //     xhr.upload.onprogress = function(event) {
-    //         console.log(`Uploaded ${event.loaded} of ${event.total}`);
-    //     };
-        
-    //     xhr.onloadend = function() {
-    //         if (xhr.status == 200) {
-    //         console.log("success");
-    //         } else {
-    //         console.log("error " + this.status);
-    //         }
-    //     };
-
-
-    //     xhr.open('POST', 'submit_photo.php');
-    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    //     xhr.send(formData);
-    // });
 }) ();

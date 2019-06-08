@@ -14,15 +14,16 @@
             $img_base64 = base64_encode(file_get_contents($_FILES['files']['tmp_name'][$i]));
             $img = 'data:image/'.$imgType.';base64,'.$img_base64;
             try {
-                $sql = "INSERT INTO images (image) VALUES (:img)";
+                $sql = "INSERT INTO img (image, userId) VALUES (:img, :userId)";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([
-                    ':img' => $img
+                    ':img' => $img,
+                    ':userId' => $_SESSION['id']
                 ]);
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-            header("Location: " . WWW_ROOT . "/pages/make_photo.php");
+            header("Location: " . WWW_ROOT . "/pages/photo.php");
             // move_uploaded_file($_FILES['files']['tmp_name'][$i], $targ_file);
         }
     }  

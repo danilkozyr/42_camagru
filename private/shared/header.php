@@ -18,7 +18,8 @@
             <table class="nav_bar">
                 <th><a href="<?php echo WWW_ROOT . '/pages/index.php'?>">HOME</a></th>
                 <?php if ($_SESSION['logged_in'] == true) : ?>
-                <th><a href="<?php echo WWW_ROOT . '/pages/make_photo.php'?>"><img src="<?php echo WWW_ROOT . "/images/photo.png"?>"" title="hello" width="50"></a></th>
+                <th><a href="<?php echo WWW_ROOT . "/pages/feed.php" ?>">FEED</a></th>
+                <th><a href="<?php echo WWW_ROOT . '/pages/photo.php'?>"><img src="<?php echo WWW_ROOT . "/images/photo.png"?>"" title="hello" width="50"></a></th>
                 <th><a href="<?php echo WWW_ROOT . '/pages/profile/'?>">PROFILE</a></th>
                 <th><a href="?logout=1">LOG OUT</a></th>
                 <?php 

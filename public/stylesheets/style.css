@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Righteous|Indie+Flower|ZCOOL+QingKe+HuangYou&display=swap');
 
 body {
     background-color: black;
@@ -11,26 +11,27 @@ body {
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 550;
-    font-size: 30px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
+    font-size: 40px;
 }
 
 h2 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 18px; 
+    font-family: 'Righteous', cursive;
+    font-size: 25px;
+    font-weight: 300;
     margin-left: 20px;
-    line-height: 24px;
+    line-height: 35px;
     text-align: left;
 }
 
 
 h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 550;
-    margin-top: 10px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
+    margin-top: 20px;
     color: rebeccapurple;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .ava {
@@ -43,19 +44,19 @@ h3 {
 
 
 .text_custom {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 550;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
     color: white;
     margin: 5px 5px;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .text_edit_acc {
     text-align: left;
     margin-left: 9%;
     font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 550;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
     margin-bottom: 5px;
 }
 
@@ -102,9 +103,9 @@ h3 {
 .button {
     width: 50%;
     background-color: rgb(35,129,137);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 650;
-    font-size: 13px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
+    font-size: 18px;
     margin-bottom: 30px;
     margin-top: 10px;
     color: white;
@@ -119,10 +120,10 @@ h3 {
 }
 
 .txt {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 550;
-    font-size: 13px;
-    line-height: 1.5;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
+    font-size: 17px;
+    /* line-height: 1.5; */
     color: black;
 }
 
@@ -212,8 +213,8 @@ ul.menu:hover li{
 }
 
 .tab-group li a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 650;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
     display:block;
     text-decoration:none;
     padding:15px;
@@ -249,6 +250,7 @@ ul.menu:hover li{
     margin-left: 0px;
 	padding: 45px;
     margin-top: 80px;
+    margin-bottom: 20px;
     position: absolute; 
     bottom: 0;
     width: 100%;
@@ -257,14 +259,17 @@ ul.menu:hover li{
 }
 
 .footer-basic-centered .footer-company-motto{
-	color:  whitesmoke;
+    color:  whitesmoke;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
 	font-size: 24px;
 	margin: 0;
 }
 
 .footer-basic-centered .footer-company-name{
-	color:  aquamarine;
-	font-size: 14px;
+    color:  aquamarine;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    margin-bottom: 10px;
+    font-size: 15px;
 	margin: 0;
 }
 
@@ -277,8 +282,8 @@ ul.menu:hover li{
 }
 
 .footer-basic-centered .footer-links a{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 650;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
 	display:inline-block;
 	text-decoration: none;
 	color: inherit;
@@ -303,13 +308,19 @@ ul.menu:hover li{
     display: block;
     background-color: cornflowerblue;
     color:white;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 20px;
     text-align: center;
     text-decoration: none;
 }
 
 .booth-button.hello {
     padding: 20px 20px;
+}
 
+.booth-button.hello:hover {
+    padding: 20px 20px;
+    cursor: pointer;
 }
 
 .feed {
@@ -344,9 +355,9 @@ input[type="file"] {
 .custom-file-upload {
     width: 50%;
     background-color: rgb(35,129,137);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 650;
-    font-size: 10px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /* font-weight: 800; */
+    font-size: 15px;
     color: white;
     padding: 4px 10px;
     border-radius: 5px;
@@ -357,8 +368,117 @@ input[type="file"] {
     background-color: black;    
 }
 
+.product-list-basic{
+    /* align: left; */
+    list-style:none;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 
-.padding-gallery {
-    width: 300px;
-    height: 225px;
+
+}
+
+.product-list-basic li{
+    box-sizing:border-box;
+    display: inline-block;
+    margin: 0 12px 14px 0;
+    padding: 25px;
+}
+
+.product-list-basic img {
+    display: block;
+    
+    width: 275px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    
+}
+
+.product-list-basic img:hover {
+    filter: brightness(2.1) drop-shadow(4px 4px 4px, white);
+    transform: scale(1.1);
+}
+
+
+.product-list-submit {
+    width: 45%;
+    margin: 0px 5px;
+    background-color: black;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    padding: 15px 10px;
+    border: 0px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.product-list-submit-inactive {
+    width: 45%;
+    margin: 0px 5px;
+    background-color: black;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    padding: 15px 10px;
+    border: 0px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.product-list-submit-inactive:hover {
+    cursor: default;
+    
+}
+
+.product-list-submit:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.stickers-list-basic {
+    list-style:none;
+    margin: 0 auto;
+    /* max-width: 1200px; */
+    width: 100%;
+
+}
+
+.stickers-list-basic li{
+    box-sizing:border-box;
+    display: inline-block;
+    /* margin: 0 0px 0px 0; */
+    padding: 15px;
+}
+
+.stickers-list-basic img {
+    display: block;
+    width: 75px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.stickers-list-basic img:hover {
+    filter: brightness(2.1) drop-shadow(4px 4px 4px, white);
+    transform: scale(1.1);
+}
+
+.stickers-list-submit {
+    width: 100%;
+    margin: 0px 5px;
+    background-color: black;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.stickers-list-submit:hover {
+    background-color: rgba(0, 0, 0, 0.0);
+    cursor: pointer;
 }
