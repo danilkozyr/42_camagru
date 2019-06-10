@@ -20,7 +20,7 @@
 
         $_SESSION['logged_in'] = true;
 
-        header("Location:" . WWW_ROOT . "/pages/profile/index.php");
+        header("Location:" . WWW_ROOT . "/profile/");
     } else {
         echo '<h3>Not Correct Password!</h3>';
     }

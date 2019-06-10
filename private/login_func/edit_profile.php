@@ -33,7 +33,7 @@
 	    	} catch(PDOException $e) {
 	    		echo "Error: " . $e->getMessage();
 	    	}
-	    	header("Location: ". WWW_ROOT . "/pages/profile");
+	    	header("Location: ". WWW_ROOT . "/profile");
 	    } else {
         	echo '<h3>Not Correct Password!</h3>';
     	}

@@ -1,19 +1,29 @@
-<?php require_once('../../private/initialize.php'); ?>
+<?php require_once('../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 
 <?php $page_title = 'Camagru Home'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php if (isset($_FILES['files'])) { require_once(PRIVATE_PATH . "/img_func/push_images.php"); } ?>
-<?php if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
-    if (isset($_POST['Delete']) || isset($_POST['Post'])) { 
-        require_once(PRIVATE_PATH . "/img_func/image_actions.php");
-    } else {
-        require_once(PRIVATE_PATH . "/img_func/push_images_to_gallery.php"); 
-    } 
-} ?>
+<?php 
+    $page = 0;
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+        echo $page;
+        $page = ($page*9)-9;
+    }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+        if (isset($_POST['Delete']) || isset($_POST['Post'])) { 
+            require_once(PRIVATE_PATH . "/img_func/image_actions.php");
+        } elseif (isset($_POST['put'])) {
+
+        } else {
+            require_once(PRIVATE_PATH . "/img_func/push_images_to_gallery.php"); 
+        }
+    }
+?>
 
 
-<script src="../js/send_img_info.js"></script>
+<script src="js/send_img_info.js"></script>
 
 <table class="snap">
     <th>
@@ -24,7 +34,7 @@
                         <video id="video" width="600" height="450"></video>
                         <a href="#" id="capture" class="booth-button hello"><p class="text_custom">take photo</p></a>
                         <canvas id="canvas"  width="600" height="450"></canvas>
-                        <img id="photo" src="../images/default.png" alt="default" width="600" name="file" height="450">
+                        <img id="photo" src="images/default.png" alt="default" width="600" name="file" height="450">
 
                         <label for="file_submit" class="booth-button hello"><p class="txt">submit photo</p></label><br>
                         <input id="file_submit" type="submit" value="add_photo" class="hide" onclick="myFunction()">
@@ -43,9 +53,8 @@
             </th>
             <th>
                 <div style="overflow:auto; height:1253px;">
-
                 <?php 
-                    $images = glob("../images/stickers/*.png");
+                    $images = glob("images/stickers/*.png");
                     echo '<ul class="stickers-list-basic">';
                     foreach($images as $image) {
                         echo '<li>';
@@ -57,7 +66,6 @@
                         echo '</li>';
                     }
                     echo '</ul>';
-
                 ?>
                 </div>
             </th>
@@ -65,8 +73,9 @@
     </th>
     <th>
         <?php require_once(PRIVATE_PATH . "/img_func/fetch_images.php") ?>
+
     </th>
 </table>
 
-<script src="../js/photo.js"></script>
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<script src="js/photo.js"></script>
+<?php #include(SHARED_PATH . '/footer.php'); ?>

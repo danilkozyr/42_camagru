@@ -20,6 +20,6 @@ function myFunction()
     
     console.log(photo.currentSrc);
 
-    xhr.open('POST', 'photo.php');
+    xhr.open('POST', 'snap.php');
     xhr.send(formData);
 }

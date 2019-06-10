@@ -1,4 +1,4 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 
 <?php
@@ -28,16 +28,16 @@
                 ]);
                 $_SESSION['active'] = 1;
                 echo "yeap";
-                header("Location:" . WWW_ROOT . "/pages/profile/index.php");
+                header("Location:" . WWW_ROOT . "/profile/");
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }      
         } else {
             $_SESSION['message'] = "The URL is invalid!";
-            header("Location:" . WWW_ROOT . "/pages/login/index.php");
+            header("Location:" . WWW_ROOT . "/login/");
         }
     } else {
         $_SESSION['message'] = "Invalid parameters provided for account verification!";
-        header("Location:" . WWW_ROOT . "/pages/login/index.php");
+        header("Location:" . WWW_ROOT . "/login/");
     }
 ?>

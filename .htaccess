@@ -1,0 +1,9 @@
+# Disable directory browsing 
+Options -Indexes
+
+#remove php file extension
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]

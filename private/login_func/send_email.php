@@ -11,7 +11,7 @@
     
         Please click this link to activate your account:
     
-        http://localhost:8100' . WWW_ROOT . '/pages/login/verify.php?email='.$email.'&hash='.$hash;  
+        http://localhost:8100/login/verify.php?email='.$email.'&hash='.$hash;  
         
         mail( $to, $subject, $message_body );
     }
@@ -26,7 +26,7 @@
 
         Please click this link to reset your password:
 
-        http://localhost:8100' . WWW_ROOT . '/pages/login/reset.php?email='.$email.'&hash='.$hash;  
+        http://localhost:8100/reset.php?email='.$email.'&hash='.$hash;  
 
         mail($to, $subject, $message_body);
     }

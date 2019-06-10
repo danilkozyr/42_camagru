@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous|Indie+Flower|ZCOOL+QingKe+HuangYou&display=swap');
 
 body {
-    background-color: black;
-    background-image: url("../images/background.svg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: #cccccc;
+     background-color: #6448a1;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2322299a'/%3E%3Cstop offset='1' stop-color='%2322299a' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a532a7'/%3E%3Cstop offset='1' stop-color='%23a532a7' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2365129a'/%3E%3Cstop offset='1' stop-color='%2365129a' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236448a1'/%3E%3Cstop offset='1' stop-color='%236448a1' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23083f87'/%3E%3Cstop offset='1' stop-color='%23083f87' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ab1f50'/%3E%3Cstop offset='1' stop-color='%23ab1f50' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+     background-attachment: fixed;
+     background-size: cover;
 }
 
 h1 {
@@ -61,11 +58,12 @@ h3 {
 }
 
 .custom {
-    margin-left: 30%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
 
     height: 30%;
-    width: 40vw;
+    width: 800px;
     text-align: center;
     border: 2px solid rgba(245,245,241, 0.85);
     background-color:rgba(245,245,241, 0.85);
@@ -433,6 +431,15 @@ input[type="file"] {
     
 }
 
+.less_width {
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.less_width:hover {
+    background-color: rgba(0, 0, 0, 0.0);
+    cursor: pointer;
+}
+
 .product-list-submit:hover {
     background-color: cornflowerblue;
     cursor: pointer;
@@ -443,7 +450,6 @@ input[type="file"] {
     margin: 0 auto;
     /* max-width: 1200px; */
     width: 100%;
-
 }
 
 .stickers-list-basic li{
@@ -530,6 +536,139 @@ input[type="file"] {
 }
 
 
+.container {
+    /* background: red;  */
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+}
 
 
 
+.card {
+    width: 600px;
+    background:#FAFAFA;
+    margin: 0 auto;
+    /* border: 1px solid black;  */
+    border-radius: 3%;
+    margin-bottom: 20px;
+}
+
+
+
+.card-header {
+    padding: 15px;
+}
+
+.card-user-img {
+    /* border: 1px solid black; */
+    display: inline-block;
+    /* background: black; */
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.card-user-img img {
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+.card-user-info {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    font-size: 18px;
+}
+
+.card-username {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.card-email {
+    font-size: 12px;
+    color: 111;
+}
+
+.card-content img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.card-footer {
+    box-sizing: border-box;
+    overflow: auto;
+    /* margin-top: 10px; */
+    padding: 20px;
+    /* margin-bottom: 25px; */
+}
+
+.card-likes {
+    /* color: black; */
+    display:inline-block;
+    font-size: 12px;  
+}
+
+.card-like-img {
+    height: 30px;
+    width: 30px;
+}
+
+.card-like-text {
+    position: relative;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: #85144b;
+    font-size: 15px;
+    left: 5px;
+    top: -10px;
+}
+
+.card-comment-block {
+    display: inline-block;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.card-comment {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-weight: 100;
+}
+
+.card-comment-per-user {
+    /* padding: 0px; */
+
+    margin-top:-10px;
+}
+
+.card-comment-username {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 16px;
+    /* margin-top: 25px; */
+    font-weight: 900;
+}
+
+.card-add-comment {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.card-add-comment input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    padding: 5px;
+    font-weight: 16px;
+    border: 0px solid black;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

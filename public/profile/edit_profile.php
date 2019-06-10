@@ -1,14 +1,14 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
-<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/pages/login/index.php"); } ?>
-<?php if ($_POST['edit_pass']) { header("Location:" . WWW_ROOT . "/pages/profile/change_pass.php"); } ?>
-<?php if ($_POST['edit_email']) { header("Location:" . WWW_ROOT . "/pages/profile/change_email.php"); } ?>
+<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
+<?php if ($_POST['edit_pass']) { header("Location:" . WWW_ROOT . "/profile/edit_pass"); } ?>
+<?php if ($_POST['edit_email']) { header("Location:" . WWW_ROOT . "/profile/edit_email"); } ?>
 
 
 <div class="custom">
-    <form class="form1" action="change_profile.php" autocomplete="off" method="POST">
+    <form class="form1" action="edit_profile.php" autocomplete="off" method="POST">
         <h1>Account Edition</h1>
 
         <p class="text_edit_acc">Your name: <?php echo htmlentities($_SESSION['firstname']); ?></p>

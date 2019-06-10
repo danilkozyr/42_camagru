@@ -1,8 +1,8 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Password Reset'; ?>
-<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/pages/profile/index.php"); } ?>
+<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
 
 
 <div class="custom">
@@ -17,7 +17,7 @@
             }
         ?>
         <input class="button" type="submit" name="reset" value="Reset"><br>
-        <a class="txt" href="index.php">Log In</a>
+        <a class="txt" href="<?php echo WWW_ROOT . "/login" ?>">Log In</a>
     </form>
 </div>
 

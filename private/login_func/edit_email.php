@@ -36,7 +36,7 @@
             }
             $_SESSION['email'] = $_POST['new_email'];
             $_SESSION['message'] = "Your password changed successfuly";
-            header("Location: " . WWW_ROOT . "/pages/profile/");
+            header("Location: " . WWW_ROOT . "/profile/");
     
         } else {
     

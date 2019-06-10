@@ -1,8 +1,8 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Camagru Login'; ?>
-<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/pages/profile/index.php"); } ?>
+<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
 
 
 <div class="custom">
@@ -19,7 +19,7 @@
     <div class="tab-content">
         <?php if (!isset($_GET['a']) or $_GET['a'] == 'login'): ?>
         <div id="login">
-            <form class="form1" action="index.php" autocomplete="off" method="POST">
+            <form class="form1" action="" autocomplete="off" method="POST">
                 <h1>Welcome!</h1>
                 <?php if (isset($_POST['signin'])) { $email = $_POST['email']; }
                 ?>
@@ -44,7 +44,7 @@
         <?php elseif ($_GET['a'] == 'signup'): ?>
         <div id="signup">
             <h1>Registration</h1>
-            <form class="form1" autocomplete="off" action="index.php?a=signup" method="POST">
+            <form class="form1" autocomplete="off" action="?a=signup" method="POST">
 
                 <?php
                     if (isset($_POST['register'])) {

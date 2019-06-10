@@ -19,5 +19,5 @@
         echo "Error: " . $e->getMessage();
     }
     $_SESSION['message'] = "Your password changed successfuly";
-    header("Location: " . WWW_ROOT . "/pages/login/index.php");
+    header("Location: " . WWW_ROOT . "/login/");
 ?>

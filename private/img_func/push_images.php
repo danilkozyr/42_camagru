@@ -23,7 +23,7 @@
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-            header("Location: " . WWW_ROOT . "/pages/photo.php");
+            header("Location: " . WWW_ROOT . "/snap");
             // move_uploaded_file($_FILES['files']['tmp_name'][$i], $targ_file);
         }
     }  

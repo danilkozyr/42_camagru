@@ -1,8 +1,8 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Password Reset'; ?>
-<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/pages/profile/index.php"); } ?>
+<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
 <?php
 
     if (($_GET['email'] && $_GET['hash'])) {
@@ -25,11 +25,11 @@
         }
         if (!$user) {
             $_SESSION['message'] = "Invalid Link";
-            header("Location:" . WWW_ROOT . "/pages/login/index.php");
+            header("Location:" . WWW_ROOT . "/login/");
         }
     } elseif (!$_POST['pass'] && !$_POST['confirm_pass']) {
         $_SESSION['message'] = "Invalid Link";
-        header("Location:" . WWW_ROOT . "/pages/login/index.php");
+        header("Location:" . WWW_ROOT . "/login/");
     }
 
 ?>
@@ -61,7 +61,8 @@
             }
         ?>
         <input class="button" type="submit" name="reset" value="Reset"><br>
-        <a class="txt" href="index.php">Log In</a>
+        <a class="txt" href="<?php echo WWW_ROOT . "/login" ?>">Log In</a>
+
     </form>
 </div>
 

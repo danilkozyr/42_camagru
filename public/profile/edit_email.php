@@ -1,9 +1,9 @@
-<?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
-<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/pages/login/index.php"); } ?>
-<?php if ($_POST['back']) { header("Location: " . WWW_ROOT . "/pages/profile/index.php"); } ?>
+<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
+<?php if ($_POST['back']) { header("Location: " . WWW_ROOT . "/profile/"); } ?>
 <?php
     if ($_POST['confirm']) {
         if ($_POST['new_email'] && $_POST['pass']) {
@@ -15,7 +15,7 @@
 ?>
 
 <div class="custom">
-    <form class="form1" action="change_email.php" autocomplete="off" method="POST">
+    <form class="form1" action="edit_email.php" autocomplete="off" method="POST">
         <h1>Account Edition</h1>
 
         <p class="text_edit_acc">Enter New Email</p>

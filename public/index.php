@@ -1,4 +1,4 @@
-<?php require_once('../../private/initialize.php'); ?>
+<?php require_once('../private/initialize.php'); ?>
 <?php $page_title = 'Camagru Home'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
@@ -16,7 +16,7 @@
 			</div>
 		</th>
 		<th>
-			<img src="../images/home_banner.png">
+			<img src="images/home_banner.png">
 		</th>
 	</tr>
 </table>

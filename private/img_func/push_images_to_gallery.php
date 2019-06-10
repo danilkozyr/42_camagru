@@ -19,6 +19,6 @@
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-    header("Location: " . WWW_ROOT . "/pages/photo.php");
+    header("Location: " . WWW_ROOT . "/snap");
 
 ?>

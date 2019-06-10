@@ -4,16 +4,16 @@
                 <p class="footer-company-motto">The Camagru</p>
 
                 <p class="footer-links">
-                    <a href="<?php echo WWW_ROOT . '/pages/index.php'?>">HOME</a>
+                    <a href="<?php echo WWW_ROOT . '/'?>">HOME</a>
                     ·
-                    <a href="<?php echo WWW_ROOT . "/pages/feed.php" ?>">FEED</a>
+                    <a href="<?php echo WWW_ROOT . "/feed" ?>">FEED</a>
                     ·
-                    <a href="<?php echo WWW_ROOT . "/pages/photo.php" ?>">MAKE A SNAPSHOT</a>
+                    <a href="<?php echo WWW_ROOT . "/snap" ?>">MAKE A SNAPSHOT</a>
                     ·
                     <?php if ($_SESSION['logged_in'] == true) : ?>
-                        <th><a href="<?php echo WWW_ROOT . '/pages/profile/'?>">PROFILE</a></th>
+                        <th><a href="<?php echo WWW_ROOT . '/profile/'?>">PROFILE</a></th>
                     <?php else : ?>
-                    <a href="<?php echo WWW_ROOT . '/pages/login/'?>">LOGIN</a>
+                    <a href="<?php echo WWW_ROOT . '/login/'?>">LOGIN</a>
                     <?php endif; ?>
                 </p>
 

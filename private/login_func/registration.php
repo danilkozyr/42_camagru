@@ -21,7 +21,7 @@
 
 	if ($count > 0) {
 		echo "<br><h3>User with this email already exists</h3>";
-    	header("url=index.php?a=signup");
+    	header("refresh:3;url=" . WWW_ROOT . "/login/?a=signup");
 	}
 	else {
 		try {
@@ -42,7 +42,7 @@
 		$_SESSION['hash'] = $hash;
 		send_verification_email($email, $firstname, $lastname, $hash);
 		echo '<h3>Check your email for verification link.<br>Redirecting...</h3>';
-	    header("refresh:3;url=index.php"); 
+	    header("refresh:3;url=" . WWW_ROOT . "/login"); 
     }
 
 ?>
