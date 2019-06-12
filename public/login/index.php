@@ -23,8 +23,8 @@
                 <h1>Welcome!</h1>
                 <?php if (isset($_POST['signin'])) { $email = $_POST['email']; }
                 ?>
-                <input class="input1" type="email" name="email" value="<?php echo $email ?>" placeholder="Enter your email">
-                <input class="input1" type="password" name="pass" placeholder="Enter your password">
+                <input class="input1" type="email" name="email" max_width="49" value="<?php echo $email ?>" placeholder="Enter your email">
+                <input class="input1" type="password" name="pass" max_width="99" placeholder="Enter your password">
                 <?php
                     if (isset($_POST['signin'])) {
                         if (!($_POST['email'] && $_POST['pass'])) {
@@ -54,10 +54,10 @@
                     }
                 ?>
                 
-                <input class="input1" type="name" name="firstname" value="<?php echo htmlentities($firstname); ?>" placeholder="Enter your name">
-                <input class="input1" type="name" name="lastname" value="<?php echo htmlentities($lastname); ?>" placeholder="Enter your last name">
-                <input class="input1" type="email" name="email" value="<?php echo htmlentities($email); ?>" placeholder="Enter your email">
-                <input class="input1" type="password" name="pass" placeholder="Enter your password">
+                <input class="input1" type="name" max_width="49" name="firstname" value="<?php echo htmlentities($firstname); ?>" placeholder="Enter your name">
+                <input class="input1" type="name" max_width="49" name="lastname" value="<?php echo htmlentities($lastname); ?>" placeholder="Enter your last name">
+                <input class="input1" type="email" max_width="99" name="email" value="<?php echo htmlentities($email); ?>" placeholder="Enter your email">
+                <input class="input1" type="password" max_width="99" name="pass" placeholder="Enter your password">
                 <?php
 
                     if (isset($_POST['register'])) {

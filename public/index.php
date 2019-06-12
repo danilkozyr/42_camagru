@@ -11,8 +11,6 @@
 				<p class="home-heading2">Camagru</p>
 				<p class="home-heading3">Daniil Kozyr</p>
 				<p class="home-heading4">dkozyr@student.unit.ua</p>
-
-
 			</div>
 		</th>
 		<th>

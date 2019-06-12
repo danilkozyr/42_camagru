@@ -42,7 +42,7 @@
                     </form>
                     <p class="txt no-margins">or</p>
                 <div class="custom-file">
-                    <form class="form1" action="photo.php" autocomplete="off" method="POST" enctype="multipart/form-data">    
+                    <form class="form1" action="" autocomplete="off" method="POST" enctype="multipart/form-data">    
 
                         <label for="file-upload" class="booth-button hello"><p class="txt">upload photo</p></label>
                         <input id="file-upload" type="file" onchange="this.form.submit()" name="files[]" multiple><br>

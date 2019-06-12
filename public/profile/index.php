@@ -24,17 +24,7 @@
                 </div>
             </th>
         </table>
-        <?php
-            if ($_SESSION['active'] == 0) {
-                echo '<h3>Validate your account, please!<br>
-                Check your email.</h3>';
-                echo '<input class="button in_row" type="submit" name="verify" value="Resend Email">';
-                echo '<input class="button in_row" type="submit" name="edit" value="Edit Account">';
-            } else {
-                echo '<h3>Account is validated.</h3>';
-                echo '<input class="button" type="submit" name="edit" value="Edit Account">';
-            }
-        ?>
+        <input class="button" type="submit" name="edit" value="Edit Account">
     </form>
 </div>
 

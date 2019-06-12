@@ -25,7 +25,23 @@
             `pass` VARCHAR(100) NOT NULL,
             `hash` VARCHAR(32) NOT NULL,
             `img` longtext,
+            `email_prefer` BOOL NOT NULL DEFAULT 1,
             `active` BOOL NOT NULL DEFAULT 0
+        );');
+        $pdo->query('
+        CREATE TABLE `accounts`.`comments` 
+        (
+            `commentId` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `photoId` int(10) NOT NULL,
+            `userId` int(10) NOT NULL,
+            `comment` longtext NOT NULL
+        );');
+        $pdo->query('
+        CREATE TABLE `accounts`.`likes` 
+        (
+            `likeId` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `photoId` int(10) NOT NULL,
+            `userId` int(10) NOT NULL
         );');
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();

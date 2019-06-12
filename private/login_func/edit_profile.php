@@ -23,11 +23,11 @@
 	    	$_SESSION['lastname'] = $_POST['lastname'];
 
 	    	try {
-	    		$sql = "UPDATE users SET firstname=:firstname, lastname=:lastname WHERE email=:email";
+	    		$sql = "UPDATE users SET firstname=:firstname, lastname=:lastnameWHERE email=:email";
 	    		$stmt = $pdo->prepare($sql);
 	    		$stmt->execute([
 	    			':firstname' => $_SESSION['firstname'],
-	    			':lastname' => $_SESSION['lastname'],
+					':lastname' => $_SESSION['lastname'],
 	    			':email' => $_SESSION['email']
 	    		]);
 	    	} catch(PDOException $e) {
