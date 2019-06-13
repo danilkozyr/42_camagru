@@ -133,6 +133,7 @@ h3 {
 
 .snap {
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .snap th {
@@ -538,12 +539,13 @@ input[type="file"] {
 
 .container {
     /* background: red;  */
+    margin-bottom: 100px;
     padding-top: 20px;
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: 100px;
-    bottom: 0;
+    /* position: absolute; */
+    /* top: 100px; */
+    /* bottom: 0; */
 }
 
 

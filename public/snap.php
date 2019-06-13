@@ -75,4 +75,4 @@
 </table>
 
 <script src="js/photo.js"></script>
-<?php #include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php'); ?>

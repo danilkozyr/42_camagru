@@ -13,4 +13,4 @@
 </section>
 
 
-<?php #include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php'); ?>
