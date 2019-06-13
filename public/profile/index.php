@@ -2,11 +2,11 @@
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php $page_title = 'Camagru Profile'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
-<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
-<?php if ($_POST['logout']) { require(PRIVATE_PATH . '/login_func/logout.php'); }?>
+<?php if (empty($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
+<?php if (isset($_POST['logout']) && $_POST['logout']) { require(PRIVATE_PATH . '/login_func/logout.php'); }?>
 <?php if (isset($_FILES['file'])) { require(PRIVATE_PATH . '/login_func/edit_img.php'); }?>
-<?php if ($_POST['verify']) { send_verification_email($_SESSION['email'], $_SESSION['firstname'], $_SESSION['lastname'], $_SESSION['hash']); }?>
-<?php if ($_POST['edit']) { header("Location: edit_profile"); } ?>
+<?php if (isset($_POST['verify']) && $_POST['verify']) { send_verification_email($_SESSION['email'], $_SESSION['firstname'], $_SESSION['lastname'], $_SESSION['hash']); }?>
+<?php if (isset($_POST['edit']) && $_POST['edit']) { header("Location: edit_profile"); } ?>
 
 <div class="custom">
     <form class="form1" action="" autocomplete="off" method="POST" enctype="multipart/form-data">    

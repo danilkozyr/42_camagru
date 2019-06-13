@@ -1,4 +1,4 @@
-function myFunction()
+function send_img_info()
 {
     var xhr = new XMLHttpRequest();
 

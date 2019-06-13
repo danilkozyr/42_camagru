@@ -2,7 +2,7 @@
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Password Reset'; ?>
-<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
+<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
 <?php
 
     if (($_GET['email'] && $_GET['hash'])) {

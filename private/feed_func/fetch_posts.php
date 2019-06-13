@@ -9,11 +9,11 @@
             $user = fetch_user($image['userId']);
             $comments = fetch_comment($image);
             $likes = fetch_likes($image);
-            if ($image['userId'] == $_SESSION['id']) {
+            if (isset($_SESSION['id']) && $image['userId'] == $_SESSION['id']) {
                 $_SESSION['delete'] = true;
             }
             foreach ($likes as $like) {
-                if ($like['userId'] == $_SESSION['id']) {
+                if (isset($_SESSION['id']) && $like['userId'] == $_SESSION['id']) {
                     $_SESSION['liked'] = true;
                 }
             }
@@ -92,11 +92,11 @@
         echo '            <p class="card-username">' . $user['firstname'] . ' ' . $user['lastname'] . '</p>';
         echo '        </div>';
         echo '        </div>';
-        if (isset($_SESSION['delete'])) {
+        if (isset($_SESSION['delete']) && $_SESSION['delete'] == true) {
             echo '        <div class="card-group-2">';
             echo '        <div class="card-delete-post">';
             echo '            <form action="" method="post">';
-            echo '              <input class="card-delete-img" type="image" name="del_post" src="/images/delete.png">';
+            echo '              <input class="card-delete-img" type="image" name="del_post" src="/images/hide.png">';
             echo '              <input type="text" name="photoId" value="'. $image['id'] .'" hidden>';
             echo '            </form>';
             echo '        </div>';
@@ -109,7 +109,7 @@
         echo '</div>';
         echo '        <div class="card-footer">';
         echo '        <div class="card-likes">';
-        if ($_SESSION['logged_in'] === true) {
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo '        <form action="" method="post">';
             if (isset($_SESSION['liked'])) {
                 echo '            <input type="image" class="card-like-img" src="/images/unlike.png">';
@@ -142,7 +142,7 @@
             echo '            </div>';
         }
         
-        if ($_SESSION['logged_in'] === true) {
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo '            <hr />';
             echo '            <div class="card-comment-form">';
             echo '                <div class="card-add-comment"s>';

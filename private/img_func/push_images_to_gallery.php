@@ -2,7 +2,7 @@
 
     $_SESSION['new'] = $_POST;
     $key = null;
-    $default = "http://localhost:8100/public/images/default.png";
+    $default = "http://localhost:8100/images/default.png";
     foreach ($_SESSION['new'] as $k => $value) {
     $key = $k;
     }
@@ -19,6 +19,6 @@
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-    header("Location: " . WWW_ROOT . "/snap");
+    header("Location: /snap");
 
 ?>

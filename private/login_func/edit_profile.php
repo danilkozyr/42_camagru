@@ -1,5 +1,5 @@
 <?php
-	if (!($_POST['firstname'] && $_POST['lastname'])) {
+	if (!(isset($_POST['firstname']) && isset($_POST['lastname']))) {
 		echo '<h3>Fill any field to change information</h3>';
 	} elseif (!$_POST['pass']) {
 		echo '<h3>Fill password to make changes</h3>';

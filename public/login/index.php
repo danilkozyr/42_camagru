@@ -2,7 +2,7 @@
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Camagru Login'; ?>
-<?php if ($_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
+<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) { header("Location:" . WWW_ROOT . "/profile/"); } ?>
 
 
 <div class="custom">
@@ -23,7 +23,7 @@
                 <h1>Welcome!</h1>
                 <?php if (isset($_POST['signin'])) { $email = $_POST['email']; }
                 ?>
-                <input class="input1" type="email" name="email" max_width="49" value="<?php echo $email ?>" placeholder="Enter your email">
+                <input class="input1" type="email" name="email" max_width="49" value="<?php if (isset($email)) { echo $email; } ?>" placeholder="Enter your email">
                 <input class="input1" type="password" name="pass" max_width="99" placeholder="Enter your password">
                 <?php
                     if (isset($_POST['signin'])) {
@@ -31,7 +31,7 @@
                             echo '<h3>Fill all required fileds</h3>';
                         } else { require(PRIVATE_PATH . '/login_func/login.php'); }
                     }
-                    if ($_SESSION['message']) {
+                    if (isset($_SESSION['message']) && $_SESSION['message']) {
                         echo '<h3>' . $_SESSION['message'] . '</h3>';
                         unset($_SESSION['message']);
                     }
@@ -48,15 +48,21 @@
 
                 <?php
                     if (isset($_POST['register'])) {
-                        $firstname = $_POST['firstname'];
-                        $lastname = $_POST['lastname'];
-                        $email = $_POST['email'];
+                        if (isset($_POST['firstname'])) {
+                            $firstname = $_POST['firstname'];
+                        }
+                        if (isset($_POST['lastname'])) {
+                            $lastname = $_POST['lastname'];
+                        }
+                        if (isset($_POST['email'])) {
+                            $email = $_POST['email'];
+                        }
                     }
                 ?>
                 
-                <input class="input1" type="name" max_width="49" name="firstname" value="<?php echo htmlentities($firstname); ?>" placeholder="Enter your name">
-                <input class="input1" type="name" max_width="49" name="lastname" value="<?php echo htmlentities($lastname); ?>" placeholder="Enter your last name">
-                <input class="input1" type="email" max_width="99" name="email" value="<?php echo htmlentities($email); ?>" placeholder="Enter your email">
+                <input class="input1" type="name" max_width="49" name="firstname" value="<?php if (isset($firstname)) { echo htmlentities($firstname); } ?>" placeholder="Enter your name">
+                <input class="input1" type="name" max_width="49" name="lastname" value="<?php if (isset($lastname)) { echo htmlentities($lastname); } ?>" placeholder="Enter your last name">
+                <input class="input1" type="email" max_width="99" name="email" value="<?php if (isset($email)) { echo htmlentities($email); } ?>" placeholder="Enter your email">
                 <input class="input1" type="password" max_width="99" name="pass" placeholder="Enter your password">
                 <?php
 
@@ -66,8 +72,10 @@
                         $lowercase = preg_match('@[a-z]@', $_POST['pass']);
                         $number    = preg_match('@[0-9]@', $_POST['pass']);
 
-                        if(!($_POST['email'] && $_POST['firstname'] && $_POST['lastname'] && $_POST['pass'])) {
+                        if (!($_POST['email'] && $_POST['firstname'] && $_POST['lastname'] && $_POST['pass'])) {
                             echo '<h3>Fill all required fileds</h3>';
+                        } elseif (strlen($_POST['email']) > 50 || strlen($_POST['firstname']) > 50 || strlen($_POST['lastname']) > 50) {
+                            echo '<h3>Fields you enter can not be more than 50 characters!</h3>';
                         } elseif (!$uppercase || !$lowercase || !$number || strlen($_POST['pass']) < 6) {
                             echo '<h3>Password should be at least 6 characters in length<br> and should include at least one upper case letter and one number.</h3>';
                         } else {

@@ -10,7 +10,7 @@
                     ·
                     <a href="<?php echo WWW_ROOT . "/snap" ?>">MAKE A SNAPSHOT</a>
                     ·
-                    <?php if ($_SESSION['logged_in'] == true) : ?>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) : ?>
                         <th><a href="<?php echo WWW_ROOT . '/profile/'?>">PROFILE</a></th>
                     <?php else : ?>
                     <a href="<?php echo WWW_ROOT . '/login/'?>">LOGIN</a>

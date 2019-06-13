@@ -6,8 +6,10 @@
     var photo = document.getElementById('photo');
     var vendorUrl = window.URL || window.WebKitURL;
 
+    // alert
+
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-        // alert('works');// Работает
+
     } else {
         alert('File API не поддерживается данным браузером');
     }
@@ -33,3 +35,28 @@
     });
 
 }) ();
+
+const rand = (min, max) => {
+    return Math.random() * (max - min) + min;
+ }
+
+function putMask(id) {
+    var mask = document.getElementById('mask');
+    var context = canvas.getContext('2d');
+    var newSrc = mask.currentSrc.split("8100");
+    var res = newSrc[1].substr(0, newSrc[1].length - 6);
+    if (id > 9) {
+        var src = res.concat(id, ".png");
+    } else {
+        var src = res.concat("0", id, ".png");
+    }
+    var img = new Image();
+    img.src = src;
+    context.drawImage(img, rand(0, 500), rand(0, 350), 100,100);
+    photo.setAttribute('src', canvas.toDataURL('image/png'));
+
+
+    console.log(src);
+    // alert(mask);
+    // console.log(mask.currentSrc);
+}

@@ -23,7 +23,7 @@
 ?>
 
 
-<script src="js/send_img_info.js"></script>
+<script src="js/ajax_requests.js"></script>
 
 <table class="snap">
     <th>
@@ -37,7 +37,7 @@
                         <img id="photo" src="images/default.png" alt="default" width="600" name="file" height="450">
 
                         <label for="file_submit" class="booth-button hello"><p class="txt">submit photo</p></label><br>
-                        <input id="file_submit" type="submit" value="add_photo" class="hide" onclick="myFunction()">
+                        <input id="file_submit" type="submit" value="add_photo" class="hide" onclick="send_img_info()">
 
                     </form>
                     <p class="txt no-margins">or</p>
@@ -53,16 +53,13 @@
             </th>
             <th>
                 <div style="overflow:auto; height:1253px;">
-                <?php 
+                        <?php 
                     $images = glob("images/stickers/*.png");
                     echo '<ul class="stickers-list-basic">';
-                    foreach($images as $image) {
+                    foreach($images as $key => $image) {
                         echo '<li>';
-                        echo '<img class="stickers" src="'.$image.'" />';
-                        echo '<form action="" method="post">
-                        <input type="hidden" name="id" value="'.$image['id'].'">
-                        <input class="stickers-list-submit" type="submit" name="put" value="Put">';
-                        echo '</form>';                        
+                        echo '<img id="mask" class="stickers" src="'.$image.'" />';
+                        echo '<a href="#" id="putMask" onclick="putMask('. $key .')" class="stickers-list-submit"><p class="text_custom">put sticker</p></a>';
                         echo '</li>';
                     }
                     echo '</ul>';

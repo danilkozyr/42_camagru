@@ -2,11 +2,11 @@
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
-<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
-<?php if ($_POST['back']) { header("Location: " . WWW_ROOT . "/profile/"); } ?>
+<?php if (empty($_SESSION['logged_in']) ||  $_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
+<?php if (isset($_POST['back'])) { header("Location: " . WWW_ROOT . "/profile/"); } ?>
 <?php
-    if ($_POST['confirm']) {
-        if ($_POST['new_email'] && $_POST['pass']) {
+    if (isset($_POST['confirm']) && $_POST['confirm']) {
+        if (isset($_POST['new_email']) && isset($_POST['pass'])) {
             require (PRIVATE_PATH . "/login_func/edit_email.php");
         } else {
             $_SESSION['message'] = "Fill all required fields please";
@@ -24,7 +24,7 @@
         <input class="input1" type="password" name="pass" placeholder="Enter Your Password">
 
         <?php
-            if ($_SESSION['message']) {
+            if (isset($_SESSION['message']) && $_SESSION['message']) {
                 echo '<h3>' . $_SESSION['message'] . '</h3>';
                 unset($_SESSION['message']);
             }

@@ -45,7 +45,7 @@
             echo "Error: " . $e->getMessage();
         }
 
-        if ($user['email_prefer'] == 0) {
+        if (isset($user['email_prefer']) && $user['email_prefer'] == 0) {
             return ;
         }
 

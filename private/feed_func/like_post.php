@@ -1,7 +1,7 @@
 <?php
 
 
-    if ($_POST['isLiked'] == "true") {
+    if (isset($_POST['isLiked']) && $_POST['isLiked'] == "true") {
         try {
             $sql = "DELETE FROM likes WHERE photoId=:photoId AND userId=:userId";
             $stmt = $pdo->prepare($sql);

@@ -2,10 +2,10 @@
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
-<?php if ($_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
-<?php if ($_POST['back']) { header("Location: " . WWW_ROOT . "/profile/"); } ?>
+<?php if (empty($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) { header("Location:" . WWW_ROOT . "/login/"); } ?>
+<?php if (isset($_POST['back'])) { header("Location: " . WWW_ROOT . "/profile/"); } ?>
 <?php
-    if ($_POST['confirm']) {
+    if (isset($_POST['confirm'])) {
 		require_once(PRIVATE_PATH . '/login_func/edit_pass.php' );
     }
 ?>
@@ -22,7 +22,7 @@
         <input class="input1" type="password" name="new_pass" placeholder="Enter New Password">
         <input class="input1" type="password" name="conf_pass" placeholder="Enter Password To Confirm">
         <?php
-            if ($_SESSION['message']) {
+            if (isset($_SESSION['message']) && $_SESSION['message']) {
                 echo '<h3>' . $_SESSION['message'] . '</h3>';
                 unset($_SESSION['message']);
             }
