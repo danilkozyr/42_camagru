@@ -1,4 +1,4 @@
-<?php require_once('../../private/initialize.php'); ?>
+<?php require_once('../private/initialize.php'); ?>
 <?php require(PRIVATE_PATH . ('/config/database.php')); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php $page_title = 'Password Reset'; ?>
@@ -41,7 +41,7 @@
         <input class="input1" type="password" name="pass" placeholder="Enter new password">
         <input class="input1" type="password" name="confirm_pass" placeholder="Confirm new password">
         <?php
-            if ($_POST['reset']) {
+            if (isset($_POST['reset']) && $_POST['reset']) {
                 
                 $uppercase = preg_match('@[A-Z]@', $_POST['pass']);
                 $lowercase = preg_match('@[a-z]@', $_POST['pass']);

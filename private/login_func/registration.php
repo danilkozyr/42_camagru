@@ -1,10 +1,4 @@
 <?php
-
-	$_SESSION['email'] = $_POST['email'];
-	$_SESSION['firstname'] = $_POST['firstname'];
-	$_SESSION['lastname'] = $_POST['lastname'];
-	$_SESSION['active'] = 0;
-
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$email = $_POST['email'];
