@@ -6,8 +6,6 @@
     var photo = document.getElementById('photo');
     var vendorUrl = window.URL || window.WebKitURL;
 
-    // alert
-
     if (window.File && window.FileReader && window.FileList && window.Blob) {
 
     } else {
@@ -55,8 +53,4 @@ function putMask(id) {
     context.drawImage(img, rand(0, 500), rand(0, 350), 100,100);
     photo.setAttribute('src', canvas.toDataURL('image/png'));
 
-
-    console.log(src);
-    // alert(mask);
-    // console.log(mask.currentSrc);
 }

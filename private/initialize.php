@@ -9,5 +9,4 @@
     define("WWW_ROOT", "");
     require_once(PRIVATE_PATH . '/login_func/send_email.php');
     require_once(PRIVATE_PATH . '/config/setup.php');
-    // print_r($_SESSION);
 ?>

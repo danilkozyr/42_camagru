@@ -14,8 +14,6 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
         if (isset($_POST['Delete']) || isset($_POST['Post'])) { 
             require_once(PRIVATE_PATH . "/img_func/image_actions.php");
-        } elseif (isset($_POST['put'])) {
-
         } else {
             require_once(PRIVATE_PATH . "/img_func/push_images_to_gallery.php"); 
         }
@@ -24,6 +22,7 @@
 
 
 <script src="js/ajax_requests.js"></script>
+<script src="js/upload.js"></script>
 
 <table class="snap">
     <th>
@@ -31,24 +30,23 @@
             <th>
                 <div class="booth">
                     <form method="post" enctype="multipart/form-data">
+
                         <video id="video" width="600" height="450"></video>
-                        <a href="#" id="capture" class="booth-button hello"><p class="text_custom">take photo</p></a>
+                        
+                        <a href="#" class="booth-button margin-bot" id="capture"><p class="text_custom">take webcam photo</p></a>
+                        <label for="file_upload" class="booth-button hello"><p class="txt">upload photo from mac</p></label><br>
+                        <input id="file_upload" type="file" value="upload_photo" class="hide" onchange="upload();">
+                        
                         <canvas id="canvas"  width="600" height="450"></canvas>
                         <img id="photo" src="images/default.png" alt="default" width="600" name="file" height="450">
 
                         <label for="file_submit" class="booth-button hello"><p class="txt">submit photo</p></label><br>
                         <input id="file_submit" type="submit" value="add_photo" class="hide" onclick="send_img_info()">
 
-                    </form>
-                    <p class="txt no-margins">or</p>
-                <div class="custom-file">
-                    <form class="form1" action="" autocomplete="off" method="POST" enctype="multipart/form-data">    
+                        <a href="#" id="do_upload" class="hide"><p class="text_custom">do</p></a>
 
-                        <label for="file-upload" class="booth-button hello"><p class="txt">upload photo</p></label>
-                        <input id="file-upload" type="file" onchange="this.form.submit()" name="files[]" multiple><br>
-                    
                     </form>
-                </div>
+
                 </div>
             </th>
             <th>

@@ -26,12 +26,18 @@
                     ':email' => $email
                 ]);
                 $_SESSION['active'] = 1;
+                $_SESSION['firstname'] = $user['firstname'];
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['lastname'] = $user['lastname'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['hash'] = $user['hash'];
+                $_SESSION['img'] = $user['img'];
+                $_SESSION['logged_in'] = true;
+                $_SESSION['email_prefer'] = true;
                 header("Location:" . WWW_ROOT . "/profile/");
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-            $_SESSION['logged_in'] = true;
-            $_SESSION['email_prefer'] = true;
         } else {
             $_SESSION['message'] = "The URL is invalid!";
             header("Location:" . WWW_ROOT . "/login/");

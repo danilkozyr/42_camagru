@@ -26,7 +26,7 @@
 
         Please click this link to reset your password:
 
-        http://localhost:8100/reset.php?email='.$email.'&hash='.$hash;  
+        http://localhost:8100/login/reset.php?email='.$email.'&hash='.$hash;  
 
         mail($to, $subject, $message_body);
     }

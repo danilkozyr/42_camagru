@@ -313,6 +313,11 @@ ul.menu:hover li{
     text-decoration: none;
 }
 
+.booth-button.margin-bot {
+    margin-bottom: 5px;
+    padding: 30px 30px;
+}
+
 .booth-button.hello {
     padding: 20px 20px;
 }

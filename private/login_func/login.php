@@ -17,12 +17,10 @@
         $_SESSION['lastname'] = $user['lastname'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['hash'] = $user['hash'];
-        // $_SESSION['active'] = $user['active'];
         $_SESSION['img'] = $user['img'];
         $_SESSION['email_prefer'] = $user['email_prefer'];
 
         $_SESSION['logged_in'] = true;
-        // echo $user['active'];
         header("Location:" . WWW_ROOT . "/profile/");
     } else {
         echo '<h3>Not Correct Password!</h3>';
