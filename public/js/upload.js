@@ -22,14 +22,3 @@ function upload() {
     }
 
 }
-
-
-// function push_to_canvas() {
-//     context.drawImage(img, 0, 0, 600, 450);
-//     photo.setAttribute('src', canvas.toDataURL('image/png'));
-//     // document.getElementById('do_upload').addEventListener('click', function() {
-//     //     // console.log(img);
-//     //     context.drawImage(img, 0, 0, 600, 450);
-//     //     photo.setAttribute('src', canvas.toDataURL('image/png'));
-//     // });
-// }

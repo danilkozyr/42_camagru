@@ -132,8 +132,8 @@
         foreach($comments as $comment) {
             
             echo '            <div class="card-comment-per-user">';
-            echo '                <span class="card-comment-username">' . $comment['firstname'] . ' ' . $comment['lastname'] . '</span>';
-            echo '                <span class="card-comment">' . $comment['comment'] . '</p></span>';
+            echo '                <span class="card-comment-username">' . htmlentities($comment['firstname']) . ' ' . htmlentities($comment['lastname']) . '</span>';
+            echo '                <span class="card-comment">' . htmlentities($comment['comment']) . '</p></span>';
             echo '            </div>';
             
         }
